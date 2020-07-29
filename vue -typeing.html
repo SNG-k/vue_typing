@@ -8,14 +8,15 @@
         display: none;
     }
 </style>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 
 <body>
 <div id="typing" v-cloak>
-	<h1>Vue Typying</h1>
+	<h1>タイピング</h1>
 	
-	<button @click="startBtn" v-if="typingMode == 1">start</button>
+	<button @click="startBtn" v-if="typingMode == 1">スタート！</button>
 	<div class="typingBlock" v-else-if="typingMode == 2">
 		<p>スタート</p>
 		<p>残り時間{{timer}}秒</p>
@@ -34,7 +35,7 @@
 	</div>
 	{{$data}}
 </div>
-<script src="../vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
 var typying =new Vue({
 	el:'#typing',

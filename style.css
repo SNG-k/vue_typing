@@ -54,5 +54,25 @@ button {
 	background: transparent
 }
 body{
-	background: #F9F5D7;
+	background: #fffff7;
+}
+h1{
+	font-size: 56px;
+	color: #8a6f51;
+	font-weight: bold;
+	font-family: 'M PLUS 1p', sans-serif;
+	text-align: center;
+}
+button{
+	background: #eda8ca;
+    font-size: 36px;
+    padding: 10px 30px;
+    border-radius: 7px;
+    color: #FFF;
+    font-weight: bold;
+    font-family: 'M PLUS 1p', sans-serif;
+}
+#typing{
+	width: 1000px;
+    margin: 0 auto;
 }
