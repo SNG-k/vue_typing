@@ -8,14 +8,14 @@
         display: none;
     }
 </style>
-<link href="https://fonts.googleapis.com/css2?family=M+PLUS+1p:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="style.css" >
 </head>
 
 <body>
-<div id="typing" v-cloak>
-	<h1>タイピング</h1>
 	
+<h1>タイピング</h1>
+<div id="typing" v-cloak>
 	<button @click="startBtn" v-if="typingMode == 1">スタート！</button>
 	<div class="typingBlock" v-else-if="typingMode == 2">
 		<p>スタート</p>
