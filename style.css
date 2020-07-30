@@ -1,7 +1,7 @@
 @charset "utf-8";
 @font-face {
-	font-family: 'misaki_gothic';
-	src: url(misaki_gothic.ttf);
+	font-family: 'dotFont';
+	src: url(k8x12.ttf);s
 }
 
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
@@ -66,7 +66,7 @@ body{
 h1{
 	font-size: 70px;
 	font-weight: bold;
-	font-family: 'misaki_gothic', monospace;
+	font-family: 'dotFont', monospace;
 	text-align: center;
 	margin-top: 50px;
 	color: #fff;
@@ -75,17 +75,47 @@ h1{
     -webkit-text-fill-color: transparent;
 }
 button{
-	background: #eda8ca;
     font-size: 36px;
-    padding: 10px 30px;
+	padding: 5px;
+	margin: 25px auto;
     border-radius: 7px;
     color: #FFF;
-    font-weight: bold;
-   font-family: 'misaki_gothic', monospace;
+	font-weight: bold;
+	font-family: 'dotFont', monospace;
+	cursor: pointer;
+	display: block;
+	position: relative;
+}
+button:before{
+	content: '▶';
+	position: absolute;
+	left: -25px;
+}
+button:hover{
+	opacity: 0.8;
 }
 #typing{
 	width: 1000px;
     margin: 0 auto;
-	padding: 90px 0 0;
+	padding: 60px 0 0;
     box-sizing: border-box;
 }
+.start{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%);
+	font-family: 'dotFont', monospace;
+	font-weight: bold;
+	font-size: 70px;
+	color: #ffffff;
+	animation: fadeIn 1s ;
+	opacity: 0;
+}
+@keyframes fadeIn {
+	0% {opacity: 0;} 
+	10% {opacity: 1;}
+	90% {top: 30%;}
+	100% {opacity: 1; top: 30%;} /*アニメーション終了時は不透明度100%*/
+  
+  }
