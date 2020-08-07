@@ -16,7 +16,6 @@
 	
 <h1>Ｖｕｅ　Ｔｙｐｉｎｇ</h1>
 <div id="typing" v-cloak>
-<<<<<<< HEAD:src/vue -typeing.html
 	<section v-if="typingMode == 1">
 		<p class="img"><img src="main.png" width="300"></p>
 		<button @click="startBtn">はじめる</button>
@@ -37,21 +36,6 @@
 		<p class="fadeIn start">終了</p>
 		<p class="result">結果発表！</p>
 		<p>今回の得点は<span> {{point}} </span>点です。</p>
-=======
-	<button @click="startBtn" v-if="typingMode == 1">ＳＴＡＲＴ</button>
-	<div class="typingBlock" v-else-if="typingMode == 2">
-		<p class="start">スタート</p>
-		<p>残り時間{{timer}}秒</p>
-		<p>{{solvedCount}}問</p>
-		<p v-text="currentWord[0]"></p>
-		<p v-text="currentWord[1]"></p>
-		<input type="text" ref="textInput" v-model="typingWords">
-		<p v-text="typingWords"></p>
-	</div>
-	<div class="resultBlock" v-else>
-		<p>結果発表！</p>
-		<p>今回の得点は{{point}}点です。</p>
->>>>>>> f4f95373160d63cd9dc90b2ea5e73d5d2dc663db:vue -typeing.html
 		<p v-if="point > 10">あなたはジェット機レベルです。</p>
 		<p v-else-if="11 > point && point > 5">あなたは車レベルです。</p>
 		<p v-else>あなたは徒歩レベルです。</p>
