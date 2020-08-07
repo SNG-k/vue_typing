@@ -1,7 +1,7 @@
 @charset "utf-8";
 @font-face {
-	font-family: 'misaki_gothic';
-	src: url(misaki_gothic.ttf);
+	font-family: 'dotFont';
+	src: url(k8x12.ttf);
 }
 
 a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
@@ -64,9 +64,10 @@ body{
 	font-size: 20px;
 }
 h1{
-	font-size: 70px;
+	font-size: 90px;
 	font-weight: bold;
-	font-family: 'misaki_gothic', monospace;
+	font-family: 'dotFont', monospace;
+	letter-spacing: 10px;
 	text-align: center;
 	margin-top: 50px;
 	color: #fff;
@@ -75,17 +76,123 @@ h1{
     -webkit-text-fill-color: transparent;
 }
 button{
-	background: #eda8ca;
-    font-size: 36px;
-    padding: 10px 30px;
+	font-size: 60px;
+	margin: 25px auto;
+    padding: 10px 0;
     border-radius: 7px;
     color: #FFF;
     font-weight: bold;
-   font-family: 'misaki_gothic', monospace;
+	font-family: 'dotFont', monospace;
+	letter-spacing: 10px;
+    position: relative;
+    display: block;
+	cursor: pointer;
+	&:hover{
+		opacity: 0.8;
+	}
+	&:before{
+		content: '▶';
+		position: absolute;
+		left: -45px;
+	}
 }
 #typing{
 	width: 1000px;
     margin: 0 auto;
 	padding: 90px 0 0;
     box-sizing: border-box;
+}
+input{
+	ime-mode:disabled;
+	width: 500px;
+	height: 40px;
+	padding: 5px;
+	border: 2px solid #c5c5c5;
+	margin: 30px auto 0;
+	display: block;
+}
+.start{
+	font-size: 80px;
+	font-weight: bold;
+	font-family: 'dotFont', monospace;
+	letter-spacing: 10px;
+}
+.fadeIn{
+	animation: fadeIn 1s;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%);
+	opacity: 0;
+}
+@keyframes fadeIn{
+	0%{
+		opacity: 0;
+	}
+	10%{
+		opacity: 1;
+	}
+	90%{
+		top:30%
+	}
+	100%{
+		top:30%; opacity: 1;
+	}
+}
+.typingWords{
+	border-bottom: 2px solid #FFF;
+	font-size: 60px;
+	margin: 20px auto 0;
+	width: 500px;
+	text-align: center;
+	height: 60px;
+	line-height: 1;
+}
+.timer{
+	text-align: center;
+	font-size: 50px;
+	>span{
+		font-size: 30px;
+	}
+}
+.point{
+	text-align: right;
+	font-size: 24px;
+	>span{
+		color: #ffdd2d;
+		font-size: 36px;
+	}
+}
+.question{
+	border: 3px solid #FFF;
+	border-radius: 3px;
+	padding: 20px;
+	.question1{
+		text-align: center;
+		font-size: 24px;
+	}
+	.question2{
+		text-align: center;
+		font-size: 70px;
+		font-weight: bold;
+		font-family: 'dotFont', monospace;
+		letter-spacing: 10px;
+	}
+}
+.img{
+	text-align: center;
+}
+.resultBlock{
+	.result{
+		font-size: 50px;
+		margin-bottom: 30px;
+	}
+	p{
+		font-size: 24px;
+		text-align: center;
+	}
+	span{
+		font-size: 36px;
+		color: #ffdd2d;
+	}
 }

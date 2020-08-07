@@ -16,24 +16,30 @@
 	
 <h1>タイピング</h1>
 <div id="typing" v-cloak>
-	<button @click="startBtn" v-if="typingMode == 1">スタート！</button>
-	<div class="typingBlock" v-else-if="typingMode == 2">
-		<p>スタート</p>
-		<p>残り時間{{timer}}秒</p>
-		<p>{{solvedCount}}問</p>
-		<p v-text="currentWord[0]"></p>
-		<p v-text="currentWord[1]"></p>
-		<input type="text" ref="textInput" v-model="typingWords">
-		<p v-text="typingWords"></p>
-	</div>
-	<div class="resultBlock" v-else>
-		<p>結果発表！</p>
-		<p>今回の得点は{{point}}点です。</p>
+	<section v-if="typingMode == 1">
+		<p class="img"><img src="main.png" width="300"></p>
+		<button @click="startBtn">はじめる</button>
+		<p style="text-align: center;">表示される単語をひたすらタイピングしてください。<br>制限時間は15秒です。</p>
+	</section>
+	<section class="typingBlock" v-else-if="typingMode == 2">
+		<p class="fadeIn start">スタート</p>
+		<p class="timer"><span>残り</span> {{timer}} <span>秒</span></p>
+		<p class="point"><span>{{point}}</span>ポイント</p>
+		<div class="question">
+			<p class="question1" v-text="currentWord[0]"></p>
+			<p class="question2" v-text="currentWord[1]"></p>
+		</div>
+		<p class="typingWords" v-text="typingWords">&nbsp;</p>
+		<input type="password" ref="textInput" v-model="typingWords">
+	</section>
+	<section class="resultBlock" v-else>
+		<p class="fadeIn start">終了</p>
+		<p class="result">結果発表！</p>
+		<p>今回の得点は<span> {{point}} </span>点です。</p>
 		<p v-if="point > 10">あなたはジェット機レベルです。</p>
 		<p v-else-if="11 > point && point > 5">あなたは車レベルです。</p>
 		<p v-else>あなたは徒歩レベルです。</p>
-	</div>
-	{{$data}}
+	</section>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 <script>
@@ -65,8 +71,9 @@ var typying =new Vue({
 		   ],
 		   typedWords: [],
 		   solvedCount:0,
-		   timer:5,
-		   point:0
+		   timer:15,
+		   point:0,
+		   isCorrect:false
 	   }
    },
 	methods:{
@@ -89,7 +96,7 @@ var typying =new Vue({
 			}, 1000),
 			setTimeout(function() {
 				self.timeUp();
-			}, 5000)
+			}, 15000)
 			this.$nextTick(() => {
 				this.$refs.textInput.focus();
 			});
@@ -109,6 +116,7 @@ var typying =new Vue({
 	},
 	updated(){
 		if(this.typingWords == this.currentWord[0]){
+			this.typingWords ='';
 			this.typedWords.push(this.typingWords);
 			this.point++;
 		}
