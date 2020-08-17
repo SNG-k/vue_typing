@@ -115,12 +115,16 @@ button{
 }
 input{
 	ime-mode:disabled;
-	width: 500px;
+	width: 100%;
 	height: 40px;
 	padding: 5px;
 	border: 2px solid #c5c5c5;
 	margin: 30px auto 0;
 	display: block;
+	box-sizing: border-box;
+	@media screen and (min-width : 768px){
+		width: 500px;
+	}
 }
 .start{
 	font-size: 80px;
@@ -152,42 +156,65 @@ input{
 }
 .typingWords{
 	border-bottom: 2px solid #FFF;
-	font-size: 60px;
+	font-size: 50px;
 	margin: 20px auto 0;
-	width: 500px;
+	width: 100%;
 	text-align: center;
 	height: 60px;
 	line-height: 1;
+	box-sizing: border-box;
+	@media screen and (min-width : 768px){
+		width: 500px;
+		font-size: 60px;
+	}
 }
 .timer{
 	text-align: center;
-	font-size: 50px;
+	font-size: 40px;
+	@media screen and (min-width : 768px){
+		font-size: 50px;
+	}
 	>span{
-		font-size: 30px;
+		font-size: 24px;
+		@media screen and (min-width : 768px){
+			font-size: 30px;
+		}
 	}
 }
 .point{
 	text-align: right;
-	font-size: 24px;
+	font-size: 18px;
+	@media screen and (min-width : 768px){
+		font-size: 24px;
+	}
 	>span{
 		color: #ffdd2d;
-		font-size: 36px;
+		font-size: 28px;
+		@media screen and (min-width : 768px){
+			font-size: 36px;
+		}
 	}
 }
 .question{
 	border: 3px solid #FFF;
 	border-radius: 3px;
-	padding: 20px;
+	padding: 15px;
+	@media screen and (min-width : 768px){
+		padding: 20px;
+	}
 	.question1{
 		text-align: center;
 		font-size: 24px;
 	}
 	.question2{
 		text-align: center;
-		font-size: 70px;
+		font-size: 46px;
 		font-weight: bold;
 		font-family: 'dotFont', monospace;
 		letter-spacing: 10px;
+		@media screen and (min-width : 768px){
+			font-size: 70px;
+		}
 	}
 }
 .img{
@@ -195,15 +222,24 @@ input{
 }
 .resultBlock{
 	.result{
-		font-size: 50px;
+		font-size: 40px;
 		margin-bottom: 30px;
+		@media screen and (min-width : 768px){
+			font-size: 50px;
+		}
 	}
 	p{
-		font-size: 24px;
+		font-size: 18px;
 		text-align: center;
+		@media screen and (min-width : 768px){
+			font-size: 24px;
+		}
 	}
 	span{
-		font-size: 36px;
+		font-size: 28px;
 		color: #ffdd2d;
+		@media screen and (min-width : 768px){
+			font-size: 36px;
+		}
 	}
 }
