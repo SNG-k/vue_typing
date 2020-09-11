@@ -23,7 +23,7 @@ gulp.task("default", function() {
         )
         .pipe(autoprefixer(['last 3 versions', 'ie >= 11', 'Android >= 5', 'iOS >= 8']))
         // cssフォルダー以下に保存
-        .pipe(gulp.dest("src"))
+        .pipe(gulp.dest("dist"))
     );
   });
 });
