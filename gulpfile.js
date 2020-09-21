@@ -5,13 +5,13 @@ const watch = require('gulp-watch');
 
 gulp.task("default", function() {
   // ★ style.scssファイルを監視
-  return gulp.watch("scss/style.scss", function() {
+  return gulp.watch("src/style.scss", function() {
     // style.scssの更新があった場合の処理
 
     // style.scssファイルを取得
     return (
       gulp
-        .src("scss/style.scss")
+        .src("src/style.scss")
         // Sassのコンパイルを実行
         .pipe(
           sass({
